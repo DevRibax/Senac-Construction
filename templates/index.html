@@ -1,0 +1,69 @@
+{{define "Index"}}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface de Sistema</title>
+    <link rel="stylesheet" href="./static/css/indexa.css">
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <nav class="nav">
+                <div class="nav-logo">
+                    <p>SENAC CONSTRUCTION</p>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <ul>
+                        <li><a href="/login" class="link">Login</a></li>
+                        <li><a href="/sobrenos" class="link active">Sobre nós</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <section>
+                <div class="container">
+                    <div class="section" id="favoritos">
+                        <h2>CADASTROS</h2>
+                        <a href="/cad_material"  class="tile green">
+                            <img src="static/img/materiais.png" alt="Clientes">
+                            <span>Materiais</span>
+                        </a>
+                        <a href="/cad_fornecedor" class="tile green">
+                            <img src="static/img/fornecedores.png" alt="Fornecedores">
+                            <span>Fornecedores</span>
+                        </a>
+                       
+                        
+                    </div>
+                    <div class="section" id="acessibilidade">
+                        <h2>ACOMPANHAMENTO</h2>
+                        <a href="/cad_insp" class="tile purple">
+                            <img src="static/img/rastreio.png" alt="Agenda">
+                            <span>Estoque</span>
+                        </a>
+                    
+                        <a href="/notafiscal" class="tile orange">
+                            <img src="static/img/notafiscal.png" alt="Materiais">
+                            <span>Nota Fiscal</span>
+                        </a>
+                    </div>
+                    <div class="section" id="atalhos">
+                        <h2>ATALHOS</h2>
+                        <a href="/cad_registro" class="tile blue">
+                            <img src="static/img/estoque.jpeg" alt="Correios">
+                            <span>Rastreio</span>
+                        </a>
+                        <a href="/cad_funcionarios" class="tile blue">
+                            <img src="static/img/logout.jpeg" alt="funcionarios">
+                            <span>Funcionários</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+</body>
+</html>
+
+{{end}}

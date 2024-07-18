@@ -1,0 +1,41 @@
+{{define "Material"}}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Materiais de Construção Civil</title>
+    <link rel="stylesheet" href="./static/css/material.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="static/img/logo.jpeg" alt="Logo da Empresa">
+            <h1>Cadastro de Materiais de Construção Civil</h1>
+        </header>
+        <form action="inseri" method="POST">
+            <label for="categoria">Categoria:</label>
+            <select id="categoria" name="categoria">
+                <option value="concreto">Concreto</option>
+                <option value="tijolos">Tijolos</option>
+                <option value="madeira">Madeira</option>
+                <option value="metais">Metais</option>
+                <option value="isolantes">isolantes</option>
+            </select>
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" name="tipo">
+                <option value="cimento portland">Cimento Portland</option>
+                <option value="Usinado">Usinado</option>
+                <option value="Armado">Armado</option>
+                <option value="...">...</option>
+                <option value="...">...</option>
+            </select>
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao" rows="4"></textarea>
+            <button type="submit" value="salvar" class="btn btn-success">Cadastrar</button>
+            <a href="index.html"><button type="button">Voltar ao Menu Inicial</button></a>
+        </form>
+    </div>
+</body>
+</html>
+{{end}}

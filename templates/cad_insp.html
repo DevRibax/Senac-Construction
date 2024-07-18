@@ -1,0 +1,55 @@
+{{define "Insp"}}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<title>Inspeção de Entrega do Estoque</title>
+<link rel="stylesheet" href="./static/css/insp.css">
+</head>
+<body>
+<div style="text-align: center;"></div>
+<div class="container">
+  <div class="form-container">
+    <img src="static/img/logo.jpeg" alt="Logo da Empresa" class="logo">
+    <h2>Inspeção de Entrega do Estoque</h2>
+    <form action="colocar" method="POST">
+      <div class="form-group">
+        <label for="produto">Produto:</label>
+        <input type="text" id="produto" name="produto" required>
+      </div>
+      <div class="form-group">
+        <label for="Codigo de Barras">Código de Barras:</label>
+        <input type="text" id="codigodebarras" name="codigodebarras" required>
+      </div>
+      <div class="form-group">
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" name="quantidade" required>
+      </div>
+      <div class="form-group">
+        <label for="condição">Condição do Produto:</label>
+        <select id="condição" name="condição" required>
+          <option value="">Selecione a condição</option>
+          <option value="ótima">Ótima</option>
+          <option value="boa">Boa</option>
+          <option value="regular">Regular</option>
+          <option value="danificada">Danificada</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="observação">Observação:</label>
+        <textarea id="observação" name="observação" rows="4"></textarea>
+      </div>
+      <button type="colocar">Registrar Inspeção</button>
+      <a href="./index.html"><button type="button">Voltar ao Menu Inicial</button></a>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
+
+{{end}}

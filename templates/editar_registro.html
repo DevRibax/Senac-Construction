@@ -1,0 +1,71 @@
+{{define "Editaregistro"}}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+        <title>Alterar</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light mb-4">
+            <a class="navbar-brand" href="/">Atualizar</a>
+        </nav>
+        <div class="container">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-5">Atualizar o registro</h1>
+                        <p class="lead">Insira os detalhes</p>
+                    </div>
+                </div>
+                <form method="POST" action="atualiza">
+                    <input type="hidden" name="id" value="{{.Id}}" >
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label for="codigo">Código:</label>
+                                <input type="text" id="codigo" name="codigo" class="form-control" value="{{.Codigo}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label for="tipodemovimentacao">Tipo de movimentação:</label>
+                                <input type="text" id="tipo" name="tipodemovimentacao" class="form-control" value="{{.TipoDeMovimentacao}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label for="horario">Horário:</label>
+                                <input type="time" name="horario" class="form-control" value="{{.Horario}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label for="observacao">Observação:</label>
+                                <input type="text" name="observacao" class="form-control" value="{{.Observacao}}">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" value="salvar" class="btn btn-success">Atualizar</button>
+                    <a class="btn btn-info" href="/lista_registro">Retornar</a>
+             </form>      
+    </body>
+
+ </html>
+ </div>
+ </body>
+    
+</html>
+      
+{{end}}

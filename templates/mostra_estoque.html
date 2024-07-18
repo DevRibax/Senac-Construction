@@ -1,0 +1,71 @@
+{{define "Mostraestoque"}}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous" defer></script>
+    <title>Estoque</title>
+</head>
+<body>
+   
+    <nav class="navbar navbar-light bg-light mb-4">
+        <a class="navbar-brand" href="/mostra_estoque">Material</a>
+    </nav>
+    <div class="container">
+        <section class="card">
+            <div>
+                <table class="table table-striped table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Código de barras</th>
+                            <th>Quantidade</th>
+                            <th>Condição do produto</th>
+                            <th>Observação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{range .}}
+                        <tr>
+                            <td>{{.Produto}}</td>
+                            <td>{{.Codigodebarras}}</td>
+                            <td>{{.Quantidade}}</td>
+                            <td>{{.Condicao}}</td>
+                            <td>{{.Observacao}}</td>
+
+                            <td><button onclick="onDelete('{{.Id}}')" class="btn btn-danger">Deletar</button></td>
+                            <td><a href="/editar_estoque?id={{.Id}}" class="btn btn-warning">Editar</a></td>
+
+
+                        </tr>
+                        
+                        {{end}}
+                
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <div class="card-footer">
+            <a href="/cad_insp" class="btn btn-primary mb-2">Cadastrar mais materiais</a>
+        </div>
+    </div>
+   
+</body>
+<script>
+    function onDelete(id) {
+        let resposta = confirm("Tem certeza que deseja deletar esse material?")
+        if (resposta) {
+            window.location = "/deletarestoque?id=" + id
+        }
+    }
+</script>
+</html>
+{{end}}

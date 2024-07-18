@@ -1,0 +1,44 @@
+{{define "Registro"}}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <title>Rastreamento de Entrega de Estoque</title>
+    <link rel="stylesheet" href="./static/css/registro.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <img src="static/img/logo.jpeg" alt="Logo da Empresa">
+            <h1>Rastreamento de Entrega de Estoque</h1>
+        </header>
+            <form action="registrar" method="POST">
+            <label for="codigo">Código:</label>
+            <input type="text" id="codigo" name="codigo">
+            <label for="tipodemovimentacao">Tipo de Movimentação:</label>
+            <select id="tipodemovimentacao" name="tipodemovimentacao">
+                <option value="entrada">Entrada</option>
+                <option value="saida">Saída</option>
+            </select>
+            <label for="horario">Horário:</label>
+            <input type="time" id="horario" name="horario">
+            <label for="observacao">Observação:</label>
+            <textarea id="observacao" name="observacao" rows="4"></textarea>
+            <button type="submit">Registrar Movimentação</button>
+            <a href="index.html"><button type="button">Voltar ao Menu Inicial</button></a>
+            <a href="/cad_material">Ir para página de cadastro</a>
+
+        </form>
+        <div id="registro">
+            <!-- Aqui será exibido o registro de movimentações -->
+        </form>
+        </div>
+    </div>
+</body>
+</html>
+
+{{end}}
